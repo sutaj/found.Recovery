@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6250F89B-62C4-4CB3-B84C-0E1D294F839D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>found.Recovery</RootNamespace>
+    <AssemblyName>found.Recovery</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>foundrecovery_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code.cs" />
+    <Compile Include="FilesCls.cs" />
+    <Compile Include="FileSignatureList.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Cascadia.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="test_files\test-32bdump-dmp.chk" />
+    <None Include="test_files\test-3gp.chk" />
+    <None Include="test_files\test-3gp2.chk" />
+    <None Include="test_files\test-3gp5.chk" />
+    <None Include="test_files\test-4cl-keychan.chk" />
+    <None Include="test_files\test-64bdump-dmp.chk" />
+    <None Include="test_files\test-7z.chk" />
+    <None Include="test_files\test-a120-mdf.chk" />
+    <None Include="test_files\test-accdb.chk" />
+    <None Include="test_files\test-acf.chk" />
+    <None Include="test_files\test-adp.chk" />
+    <None Include="test_files\test-ani.chk" />
+    <None Include="test_files\test-arc.chk" />
+    <None Include="test_files\test-arc_v1.chk" />
+    <None Include="test_files\test-arc_v2.chk" />
+    <None Include="test_files\test-arc_v3.chk" />
+    <None Include="test_files\test-arc_v4.chk" />
+    <None Include="test_files\test-arc_v5.chk" />
+    <None Include="test_files\test-arj.chk" />
+    <None Include="test_files\test-asf.chk" />
+    <None Include="test_files\test-au.chk" />
+    <None Include="test_files\test-avi.chk" />
+    <None Include="test_files\test-aw.chk" />
+    <None Include="test_files\test-bc-info.chk" />
+    <None Include="test_files\test-bcoin-dat.chk" />
+    <None Include="test_files\test-bdr.chk" />
+    <None Include="test_files\test-blend.chk" />
+    <None Include="test_files\test-bmp.chk" />
+    <None Include="test_files\test-bz2.chk" />
+    <None Include="test_files\test-cab.chk" />
+    <None Include="test_files\test-caf.chk" />
+    <None Include="test_files\test-cal.chk" />
+    <None Include="test_files\test-cap.chk" />
+    <None Include="test_files\test-cd-mpg-dat.chk" />
+    <None Include="test_files\test-cdr.chk" />
+    <None Include="test_files\test-chi.chk" />
+    <None Include="test_files\test-cin.chk" />
+    <None Include="test_files\test-class.chk" />
+    <None Include="test_files\test-cpl.chk" />
+    <None Include="test_files\test-cproj.chk" />
+    <None Include="test_files\test-cpt.chk" />
+    <None Include="test_files\test-cpt_f2.chk" />
+    <None Include="test_files\test-cru.chk" />
+    <None Include="test_files\test-crw.chk" />
+    <None Include="test_files\test-crx.chk" />
+    <None Include="test_files\test-csh.chk" />
+    <None Include="test_files\test-ctl.chk" />
+    <None Include="test_files\test-cur-tib.chk" />
+    <None Include="test_files\test-cur.chk" />
+    <None Include="test_files\test-dcx.chk" />
+    <None Include="test_files\test-deskmate-doc.chk" />
+    <None Include="test_files\test-doc.chk" />
+    <None Include="test_files\test-docx.chk" />
+    <None Include="test_files\test-dot.chk" />
+    <None Include="test_files\test-drw.chk" />
+    <None Include="test_files\test-dsp.chk" />
+    <None Include="test_files\test-dsw.chk" />
+    <None Include="test_files\test-du-dun.chk" />
+    <None Include="test_files\test-dvf.chk" />
+    <None Include="test_files\test-dwg.chk" />
+    <None Include="test_files\test-eml.chk" />
+    <None Include="test_files\test-enc.chk" />
+    <None Include="test_files\test-eps.chk" />
+    <None Include="test_files\test-epub.chk" />
+    <None Include="test_files\test-evt.chk" />
+    <None Include="test_files\test-evtx.chk" />
+    <None Include="test_files\test-exe.chk" />
+    <None Include="test_files\test-exif-jpg.chk" />
+    <None Include="test_files\test-f1-hlp.chk" />
+    <None Include="test_files\test-f1-jar.chk" />
+    <None Include="test_files\test-f2-eps.chk" />
+    <None Include="test_files\test-f2-gif.chk" />
+    <None Include="test_files\test-f2-hlp.chk" />
+    <None Include="test_files\test-f2-jar.chk" />
+    <None Include="test_files\test-f2-mar.chk" />
+    <None Include="test_files\test-f2-mov.chk" />
+    <None Include="test_files\test-f2-mpg.chk" />
+    <None Include="test_files\test-f2-ra.chk" />
+    <None Include="test_files\test-f2-sit.chk" />
+    <None Include="test_files\test-f2-sln.chk" />
+    <None Include="test_files\test-f2-swf.chk" />
+    <None Include="test_files\test-f2-tif.chk" />
+    <None Include="test_files\test-f3-eps.chk" />
+    <None Include="test_files\test-f3-hlp.chk" />
+    <None Include="test_files\test-f3-mov.chk" />
+    <None Include="test_files\test-f3-rtd.chk" />
+    <None Include="test_files\test-f3-tif.chk" />
+    <None Include="test_files\test-f3-vcf.chk" />
+    <None Include="test_files\test-f4-mov.chk" />
+    <None Include="test_files\test-f4-tif.chk" />
+    <None Include="test_files\test-f5-mov.chk" />
+    <None Include="test_files\test-f6-mov.chk" />
+    <None Include="test_files\test-fl-sim-cfg.chk" />
+    <None Include="test_files\test-flac.chk" />
+    <None Include="test_files\test-flt.chk" />
+    <None Include="test_files\test-flv.chk" />
+    <None Include="test_files\test-fm.chk" />
+    <None Include="test_files\test-gem-img.chk" />
+    <None Include="test_files\test-gif.chk" />
+    <None Include="test_files\test-gimp-pat.chk" />
+    <None Include="test_files\test-gz.chk" />
+    <None Include="test_files\test-hdr.chk" />
+    <None Include="test_files\test-hqx.chk" />
+    <None Include="test_files\test-ie-dat.chk" />
+    <None Include="test_files\test-ifo.chk" />
+    <None Include="test_files\test-img.chk" />
+    <None Include="test_files\test-indd.chk" />
+    <None Include="test_files\test-inno-un-dat.chk" />
+    <None Include="test_files\test-is-cab.chk" />
+    <None Include="test_files\test-isb-img.chk" />
+    <None Include="test_files\test-ishield-hdr.chk" />
+    <None Include="test_files\test-iso.chk" />
+    <None Include="test_files\test-ivr.chk" />
+    <None Include="test_files\test-jar2-jar.chk" />
+    <None Include="test_files\test-jarcs-jar.chk" />
+    <None Include="test_files\test-jfif.chk" />
+    <None Include="test_files\test-jnt.chk" />
+    <None Include="test_files\test-jp2.chk" />
+    <None Include="test_files\test-jpg.chk" />
+    <None Include="test_files\test-jtp.chk" />
+    <None Include="test_files\test-kgb.chk" />
+    <None Include="test_files\test-kwd.chk" />
+    <None Include="test_files\test-lgc.chk" />
+    <None Include="test_files\test-lha.chk" />
+    <None Include="test_files\test-m4a.chk" />
+    <None Include="test_files\test-manifest.chk" />
+    <None Include="test_files\test-mar.chk" />
+    <None Include="test_files\test-mdb.chk" />
+    <None Include="test_files\test-mdf.chk" />
+    <None Include="test_files\test-mkv.chk" />
+    <None Include="test_files\test-mny.chk" />
+    <None Include="test_files\test-mof.chk" />
+    <None Include="test_files\test-mov.chk" />
+    <None Include="test_files\test-mp3.chk" />
+    <None Include="test_files\test-mpg.chk" />
+    <None Include="test_files\test-msc.chk" />
+    <None Include="test_files\test-msi.chk" />
+    <None Include="test_files\test-mtool-dat.chk" />
+    <None Include="test_files\test-nort-av-quarant.chk" />
+    <None Include="test_files\test-norton-dat.chk" />
+    <None Include="test_files\test-nri.chk" />
+    <None Include="test_files\test-nsf.chk" />
+    <None Include="test_files\test-nvram.chk" />
+    <None Include="test_files\test-ogg.chk" />
+    <None Include="test_files\test-otf.chk" />
+    <None Include="test_files\test-outlook-msg.chk" />
+    <None Include="test_files\test-pax.chk" />
+    <None Include="test_files\test-pbasic-pdb.chk" />
+    <None Include="test_files\test-pch.chk" />
+    <None Include="test_files\test-pdb.chk" />
+    <None Include="test_files\test-pdf.chk" />
+    <None Include="test_files\test-perfoff-doc.chk" />
+    <None Include="test_files\test-pgd.chk" />
+    <None Include="test_files\test-png.chk" />
+    <None Include="test_files\test-ppt.chk" />
+    <None Include="test_files\test-pri-spoo-ico.chk" />
+    <None Include="test_files\test-psd.chk" />
+    <None Include="test_files\test-psp.chk" />
+    <None Include="test_files\test-pub.chk" />
+    <None Include="test_files\test-pwi.chk" />
+    <None Include="test_files\test-pwl.chk" />
+    <None Include="test_files\test-q-pak.chk" />
+    <None Include="test_files\test-ra.chk" />
+    <None Include="test_files\test-ram.chk" />
+    <None Include="test_files\test-ramimage.chk" />
+    <None Include="test_files\test-rar.chk" />
+    <None Include="test_files\test-reg.chk" />
+    <None Include="test_files\test-rmvb.chk" />
+    <None Include="test_files\test-rpm.chk" />
+    <None Include="test_files\test-rsakey.chk" />
+    <None Include="test_files\test-rtf.chk" />
+    <None Include="test_files\test-sdr.chk" />
+    <None Include="test_files\test-sh.chk" />
+    <None Include="test_files\test-shar-dat.chk" />
+    <None Include="test_files\test-shd.chk" />
+    <None Include="test_files\test-sit.chk" />
+    <None Include="test_files\test-skf.chk" />
+    <None Include="test_files\test-sln.chk" />
+    <None Include="test_files\test-snm.chk" />
+    <None Include="test_files\test-sol.chk" />
+    <None Include="test_files\test-sql.chk" />
+    <None Include="test_files\test-sqlite-db.chk" />
+    <None Include="test_files\test-suo.chk" />
+    <None Include="test_files\test-swf.chk" />
+    <None Include="test_files\test-tar-bz2.chk" />
+    <None Include="test_files\test-tar.chk" />
+    <None Include="test_files\test-tbi.chk" />
+    <None Include="test_files\test-thumbs-db.chk" />
+    <None Include="test_files\test-thumbs-dbb.chk" />
+    <None Include="test_files\test-tib.chk" />
+    <None Include="test_files\test-tif.chk" />
+    <None Include="test_files\test-tomtom-dat.chk" />
+    <None Include="test_files\test-ttf.chk" />
+    <None Include="test_files\test-unity-pak.chk" />
+    <None Include="test_files\test-v1-dmg.chk" />
+    <None Include="test_files\test-v2-dmg.chk" />
+    <None Include="test_files\test-v2-eml.chk" />
+    <None Include="test_files\test-v2-rar.chk" />
+    <None Include="test_files\test-vdf.chk" />
+    <None Include="test_files\test-vdi.chk" />
+    <None Include="test_files\test-vhd.chk" />
+    <None Include="test_files\test-vm3-vmdk.chk" />
+    <None Include="test_files\test-vm4-vmdk.chk" />
+    <None Include="test_files\test-w95-pwl.chk" />
+    <None Include="test_files\test-w9x-shd.chk" />
+    <None Include="test_files\test-wallet.chk" />
+    <None Include="test_files\test-wav.chk" />
+    <None Include="test_files\test-webp.chk" />
+    <None Include="test_files\test-win9x-dat.chk" />
+    <None Include="test_files\test-winnt-dat.chk" />
+    <None Include="test_files\test-wmf.chk" />
+    <None Include="test_files\test-wnt-shd.chk" />
+    <None Include="test_files\test-word2-doc.chk" />
+    <None Include="test_files\test-works-db.chk" />
+    <None Include="test_files\test-wsrv2003-shd.chk" />
+    <None Include="test_files\test-xar.chk" />
+    <None Include="test_files\test-xcf.chk" />
+    <None Include="test_files\test-xml.chk" />
+    <None Include="test_files\test-xz.chk" />
+    <None Include="test_files\test-zip.chk" />
+    <None Include="test_files\test-zoo.chk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_pen_stroke_sketch_doodle_lineart_116_451423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_spin_118606.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="foundrecovery_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 i x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
